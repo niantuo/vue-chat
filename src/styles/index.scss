@@ -1,0 +1,32 @@
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.chat-container {
+  height: 500px;
+  width: 800px;
+  display: flex;
+  display: -webkit-flex;
+  background-color: white;
+  flex-direction: column;
+  border-radius: 5px;
+  ul {
+    list-style: none;
+  }
+
+  .chat-users {
+    width: 200px;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+}
