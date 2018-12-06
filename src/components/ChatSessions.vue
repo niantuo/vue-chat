@@ -46,8 +46,14 @@
             },
             currentId() {
                 let currentSession = this.currentSession;
-                console.log('currentSession=>', currentSession);
-                return this.currentSession.id;
+                if (currentSession) {
+                    return currentSession.id;
+                }
+            }
+        },
+        watch: {
+            currentSession(session) {
+                console.log('ChatSessions=>current=>', session)
             }
         }
     };

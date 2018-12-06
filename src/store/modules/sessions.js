@@ -7,7 +7,7 @@ export default {
     state: {
         // 会话列表
         sessions: [],
-        currentSession: undefined,
+        currentSession: {},
         sessionIdMap: {},
         userInfo: {
             id: '',
@@ -38,9 +38,15 @@ export default {
         },
         ADD_SESSION(state, session) {
             if (session && session.id) {
-                state.sessionIdMap[session.id] = session;
-                state.sessions.push(session);
-                state.currentSession = session;
+                let sessionId = session.id;
+                let newSession = state.sessionIdMap[sessionId];
+                if (!newSession) {
+                    newSession = session;
+                    state.sessionIdMap[sessionId] = newSession;
+                    state.sessions.push(newSession);
+                }
+                state.currentSession = newSession;
+                console.log('ADD_SESSION=>', this.currentSession);
             } else {
                 console.error('ADD_SESSION no session id', session)
             }
