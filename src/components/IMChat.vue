@@ -1,11 +1,11 @@
 <template>
     <div class="chat-container">
-        <slot name="tool"></slot>
+        <ChatHeader></ChatHeader>
         <div class="im-chat-container">
-            <div class="chat-users">
+            <div v-show="sessions.length>1" class="chat-users">
                 <ChatSessions class="user-list"/>
             </div>
-            <ChatPanel class="chat-content"/>
+            <ChatPanel @onSendMessage="onSendMessage" class="chat-content" @onClickMessage="onClickMessage"/>
         </div>
     </div>
 </template>
@@ -13,10 +13,27 @@
 <script>
     import ChatSessions from "./ChatSessions";
     import ChatPanel from "./ChatPanel";
+    import ChatHeader from "./ChatHeader";
 
     export default {
         name: "IMChat",
-        components: {ChatPanel, ChatSessions}
+        components: {ChatHeader, ChatPanel, ChatSessions},
+        data() {
+            return {}
+        },
+        methods: {
+            onSendMessage(message, session) {
+                this.$emit('onSendMessage', message, session)
+            },
+            onClickMessage(message, session) {
+                this.$emit('onClickMessage', message, session)
+            }
+        },
+        computed: {
+            sessions() {
+                return this.$store.state.chat.sessions;
+            }
+        }
     }
 </script>
 
