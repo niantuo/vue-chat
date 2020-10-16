@@ -1,13 +1,15 @@
 {
-  "name": "vue-chat",
+  "name": "vue-chat-tn",
   "description": "基于vue的聊天界面组件",
   "author": "tuonina",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
+  "main": "./lib/vue-chat-tn.js",
   "scripts": {
     "dev": "cross-env BABEL_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "build:dev": "cross-env NODE_ENV=development env_config=dev node build/build.js",
     "build:prod": "cross-env NODE_ENV=production env_config=prod node build/build.js",
+    "build:lib": "cross-env NODE_ENV=production env_config=lib node build/build.js",
     "build:sit": "cross-env NODE_ENV=production env_config=sit node build/build.js"
   },
   "dependencies": {

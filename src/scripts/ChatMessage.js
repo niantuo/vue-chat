@@ -24,14 +24,14 @@ export const CState = {
  * 聊天记录模板
  */
 export class ChatMessage {
-    id: string;
-    date: string = Date();
-    content: string;
-    cType: number = 0;//0:文字，1：图片，2：文档
-    url: string;
-    senderId: string;
-    sender: string;
-    state: number = CState.SENDING;
+    id='';
+    date = Date();
+    content;
+    cType = 0;//0:文字，1：图片，2：文档
+    url='';
+    senderId='';
+    sender='';
+    state = CState.SENDING;
 
     // 构造
     constructor() {
@@ -44,22 +44,22 @@ export class ChatMessage {
  * session数据
  */
 export class ChatSession {
-    messages: Array<ChatMessage> = [];
-    id: string;
-    avatar: string;
-    name: string;
-    current: number = 1;
-    pageSize: number = 15;
+    messages = [];
+    id='';
+    avatar='';
+    name='';
+    current = 1;
+    pageSize = 15;
 
     constructor() {
 
     }
 
-    addMessage(message: ChatMessage) {
+    addMessage(message) {
         this.messages.push(message)
     };
 
-    removeMessage(message: ChatMessage) {
+    removeMessage(message) {
         let index = this.messages.indexOf(message);
         this.messages = this.messages.splice(index, 1);
     }
@@ -67,9 +67,9 @@ export class ChatSession {
 
 
 export class UserInfo {
-    id: string;
-    name: string;
-    avatar: string;
+    id='';
+    name='';
+    avatar='';
 
     constructor() {
     }
