@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f627331b-a22b-47d2-9e6c-14d50d439030" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/icons/ic_avatar.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/webpack.base.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.base.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/webpack.lib.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.lib.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ic_failed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ic_file.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ic_img.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/vue-chat-tn.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/vue-chat-tn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/vue-chat-tn.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/vue-chat-tn.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ChatPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatPanel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChatSessions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatSessions.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IMChat.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IMChat.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/sessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/sessions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +88,7 @@
       <updated>1543983092646</updated>
       <workItem from="1543983096387" duration="37942000" />
       <workItem from="1544403836597" duration="786000" />
-      <workItem from="1602820705052" duration="6249000" />
+      <workItem from="1602820705052" duration="11208000" />
     </task>
     <servers />
   </component>

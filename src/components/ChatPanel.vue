@@ -23,10 +23,10 @@
                 <img class="tool-icon" @click="selectImage" alt="发送图片" src="./icons/ic_img.png"/>
                 <img class="tool-icon" alt="发送文件" src="./icons/ic_file.png"/>
             </div>
-            <div id="inputArea" class="chat-scrollbar" @keyup="onKeyup"  ref="inputArea"></div>
+            <div id="inputArea" class="chat-scrollbar" @keyup="onKeyup" ref="inputArea"></div>
             <input @change="imgChange" ref="imgInput" type="file" hidden accept="image/*"/>
             <div class="input-btns">
-                <button class="input-btn">关闭</button>
+                <button @click="onCloseBtn" class="input-btn">关闭</button>
                 <button @click="send" class="input-btn blue-btn">发送</button>
             </div>
         </div>
@@ -49,8 +49,8 @@
                 content: '',
                 cType: CType,
                 cState: CState,
-                inputType:CType.TEXT,
-                editor:undefined
+                inputType: CType.TEXT,
+                editor: undefined
             };
         },
         methods: {
@@ -62,10 +62,10 @@
             },
             send() {
                 let content = this.editor.getHTML();
-                console.log('content=>',content);
+                console.log('content=>', content);
 
                 this.editor.insertImage('http://p2.gexing.com/G1/M00/0E/D1/rBACFFJFuK6BmUmeAAFZKHPfEnc600.jpg'
-                    ,{class:'input-img'});
+                    , {class: 'input-img'});
 
                 if (this.content.length) {
                     this.sendMessage(this.content);
@@ -99,21 +99,24 @@
                 let panel = this.$refs.chatRecords;
                 panel.scrollTop = panel.scrollHeight;
             },
-            selectImage(){
+            selectImage() {
                 this.$refs.imgInput.click();
             },
-            imgChange(event){
+            imgChange(event) {
                 let files = this.$refs.imgInput.files;
-                if (files&&files.length){
+                if (files && files.length) {
                     let file = files[0];
                     const windowURL = window.URL || window.webkitURL;
-                    const dataURL=windowURL.createObjectURL(file);
-                    this.editor.insertImage(dataURL,{class:'input-img'});
+                    const dataURL = windowURL.createObjectURL(file);
+                    this.editor.insertImage(dataURL, {class: 'input-img'});
                 }
             },
-            editorInit(){
+            editorInit() {
                 this.editor = new Squire(this.$refs.inputArea);
-                console.log('editor=>',this.editor)
+                console.log('editor=>', this.editor)
+            },
+            onCloseBtn() {
+                this.$emit('close');
             }
         },
         computed: {
@@ -132,7 +135,7 @@
                 this.$nextTick(this.scrollToBottom.bind(this))
             }
         },
-        mounted(){
+        mounted() {
             this.editorInit();
         }
     };
@@ -147,15 +150,18 @@
         display: flex;
         display: -webkit-flex;
         flex-direction: column;
+
         .message {
             padding: 20px 15px 10px;
             overflow-y: auto;
             flex: 1;
             -webkit-flex: 1;
+
             ul {
                 margin: 0;
                 padding: 0;
             }
+
             li {
                 margin-bottom: 15px;
             }
@@ -205,7 +211,7 @@
             padding: 2px 10px 10px;
             position: relative;
 
-            #inputArea{
+            #inputArea {
                 flex: 1;
                 width: 100%;
                 border: none;
@@ -213,6 +219,7 @@
                 overflow-y: auto;
                 overflow-x: hidden;
             }
+
             textarea {
                 flex: 1;
                 width: 100%;
@@ -227,6 +234,7 @@
             .input-tool {
                 height: 25px;
                 padding-bottom: 10px;
+
                 .tool-icon {
                     width: 25px;
                     height: 25px;
@@ -234,6 +242,7 @@
                     display: inline-block;
                     padding-right: 10px;
                 }
+
                 .tool-icon:hover {
                     cursor: pointer;
                 }
@@ -243,6 +252,7 @@
                 position: absolute;
                 right: 10px;
                 bottom: 10px;
+
                 .input-btn {
                     width: 60px;
                     height: 35px;
@@ -251,13 +261,13 @@
                     background-color: transparent;
                 }
 
-                .blue-btn{
+                .blue-btn {
                     background-color: #0ebbff;
                     color: white;
                 }
             }
 
-            .file-input{
+            .file-input {
                 flex: 1;
                 width: 100%;
                 border: none;

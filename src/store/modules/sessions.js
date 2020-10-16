@@ -13,17 +13,20 @@ export default {
             id: '',
             avatar: undefined,
             name: ''
-        }
+        },
+
     },
     mutations: {
-        ADD_MESSAGE({currentSession}, message) {
-            if (currentSession) {
-                if (!currentSession.messages) {
-                    currentSession.messages = [];
+        ADD_MESSAGE(state, message) {
+            let session = state.sessionIdMap[message.senderId];
+            if (session) {
+                if (!session.messages) {
+                    session.messages = [];
                 }
-                currentSession.messages.push(message)
+                session.messages.push(message);
+                state.sessions = [].concat(state.sessions);
             } else {
-                console.error('SEND_MESSAGE currentSession is null.')
+                console.error('SEND_MESSAGE session is null.')
             }
         },
         // 选择会话
@@ -34,7 +37,6 @@ export default {
             } else {
                 console.error('SELECT_SESSION no select session=> ', id)
             }
-
         },
         ADD_SESSION(state, session) {
             if (session && session.id) {

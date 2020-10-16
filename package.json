@@ -2,7 +2,7 @@
   "name": "vue-chat-tn",
   "description": "基于vue的聊天界面组件",
   "author": "tuonina",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "private": false,
   "main": "./lib/vue-chat-tn.js",
   "scripts": {

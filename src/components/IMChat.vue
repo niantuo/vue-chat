@@ -5,7 +5,10 @@
             <div v-show="sessions.length>1" class="chat-users">
                 <ChatSessions class="user-list"/>
             </div>
-            <ChatPanel @onSendMessage="onSendMessage" class="chat-content" @onClickMessage="onClickMessage"/>
+            <ChatPanel @onSendMessage="onSendMessage"
+                       class="chat-content"
+                       @close="onCloseBtn"
+                       @onClickMessage="onClickMessage"/>
         </div>
     </div>
 </template>
@@ -27,6 +30,9 @@
             },
             onClickMessage(message, session) {
                 this.$emit('onClickMessage', message, session)
+            },
+            onCloseBtn(){
+                this.$emit('close')
             }
         },
         computed: {
