@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f627331b-a22b-47d2-9e6c-14d50d439030" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/build/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/webpack.lib.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/lib.env.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/ic_failed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/ic_file.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/ic_img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/vue-chat-tn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/vue-chat-tn.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/icons/ic_avatar.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/build.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.base.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.base.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.lib.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.lib.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ic_failed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ic_file.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ic_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/vue-chat-tn.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/vue-chat-tn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/vue-chat-tn.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/vue-chat-tn.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/ChatMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/ChatMessage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChatPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatPanel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChatSessions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatSessions.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +61,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/icons" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -75,11 +72,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\vue-chat\src\components\icons" />
       <recent name="D:\workspace\vue-chat\build" />
       <recent name="D:\workspace\vue-chat\config" />
       <recent name="D:\VueOpenSource\vue-chat" />
       <recent name="D:\VueOpenSource\vue-chat\build" />
-      <recent name="D:\VueOpenSource\vue-chat\src\components\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\VueOpenSource\vue-chat\src" />
@@ -97,7 +94,7 @@
       <updated>1543983092646</updated>
       <workItem from="1543983096387" duration="37942000" />
       <workItem from="1544403836597" duration="786000" />
-      <workItem from="1602820705052" duration="2947000" />
+      <workItem from="1602820705052" duration="6249000" />
     </task>
     <servers />
   </component>

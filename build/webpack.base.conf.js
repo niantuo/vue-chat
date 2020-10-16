@@ -25,7 +25,7 @@ module.exports = {
         app: './src/main.js'
     },
     output: {
-        path: './dist',
+        path: path.resolve(__dirname,'../dist'),
         filename: '[name].js',
         publicPath: process.env.NODE_ENV === 'production'
             ? config.build.assetsPublicPath
@@ -71,6 +71,7 @@ module.exports = {
                 exclude: [resolve('src/icons')],
                 options: {
                     limit: 10000,
+                    esModule:false,
                     name: utils.assetsPath('img/[name].[hash:7].[ext]')
                 }
             },
@@ -79,6 +80,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
+                    esModule:false,
                     name: utils.assetsPath('media/[name].[hash:7].[ext]')
                 }
             },
@@ -87,6 +89,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
+                    esModule:false,
                     name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
                 }
             }

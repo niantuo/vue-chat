@@ -1,5 +1,8 @@
 var path = require('path')
-var webpack = require('webpack')
+var webpack = require('webpack');
+const vueLoaderConfig = require('./vue-loader.conf')
+const utils = require('./utils')
+
 
 module.exports = {
   entry: './index.js',
@@ -10,6 +13,14 @@ module.exports = {
     publicPath:'/lib/',
     libraryTarget:'umd',
     umdNamedDefine:true
+  },
+  resolve: {
+    extensions: ['.js', '.vue', '.json', '.ts', '.tsx'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': path.resolve('src'),
+      'components': path.resolve('src/components')
+    }
   },
   module: {
     rules: [
@@ -65,23 +76,14 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
+        loader: 'url-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          name: '[name].[ext]?[hash]',
+          limit: 10000,
+          esModule:false,
         }
       }
     ]
-  },
-  resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-    },
-    extensions: ['*', '.js', '.vue', '.json']
-  },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true,
-    overlay: true
   },
   performance: {
     hints: false
@@ -106,6 +108,7 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    })
+    }),
+
   ])
 }

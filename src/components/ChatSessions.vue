@@ -4,7 +4,7 @@
             <li v-for="item in sessions"
                 :class="{ active: item.id === currentId }"
                 @click="selectSession(item.id)">
-                <img class="avatar" :alt="item.name" :src="item.avatar">
+                <img class="avatar" alt="" :src="isValidImg(item.avatar)">
                 <div class="chat-info">
                     <div class="name-and-time">
                         <span class="name">{{item.name}}</span>
@@ -17,6 +17,7 @@
     </div>
 </template>
 <script>
+    import avatarImg from './icons/ic_avatar.png'
 
     export default {
         data() {
@@ -35,6 +36,9 @@
                     }
                 }
                 return ''
+            },
+            isValidImg(url) {
+                return url && url.length ? url : avatarImg;
             }
         },
         computed: {
@@ -65,6 +69,7 @@
         height: 100%;
         overflow-x: hidden;
         overflow-y: auto;
+
         ul {
             padding: 0;
             margin: 0;
@@ -77,23 +82,25 @@
             display: flex;
             display: -webkit-flex;
             align-items: center;
+
             &:hover {
                 background-color: rgba(255, 255, 255, 0.03);
             }
+
             &.active {
                 background-color: rgba(186, 186, 186, 0.33);
                 border-left: solid 5px green;
             }
 
         }
+
         .avatar {
             display: block;
             height: 40px;
             width: 40px;
             border-radius: 100%;
-        }
-        .avatar {
-
+            border: solid 1px #f4f4f4;
+            overflow: hidden;
         }
 
         .chat-info {

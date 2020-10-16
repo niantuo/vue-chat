@@ -2,7 +2,7 @@
     <div class="chat-panel">
         <div class="message chat-scrollbar" ref="chatRecords">
             <ul v-if="currentSession">
-                <li v-for="item in currentMessages" @click="onClickMessage(item)">
+                <li v-for="item in currentMessages" :key="item.id" @click="onClickMessage(item)">
                     <span class="msg-sender" :class="{'msg-self':isSelfMessage(item)}">
                         {{`${item.sender}  ${item.date}` }}</span>
                     <div class="message-content">
@@ -13,7 +13,7 @@
                               v-else-if="item.cType===cType.FILE">{{item.content}}</span>
                         <DotLoading v-if="item.state===cState.SENDING" class="spinner"/>
                         <img @click="onSendMessage(item)" class="send-fail" v-if="item.state===cState.FAILED"
-                             src="./icons/ic_failed.png"/>
+                             src="./icons/ic_failed.png" alt=""/>
                     </div>
                 </li>
             </ul>
